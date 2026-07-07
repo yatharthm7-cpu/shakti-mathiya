@@ -13,7 +13,7 @@ const stats = [
 function Counter({ from, to, duration = 2 }: { from: number; to: number; duration?: number }) {
   const [count, setCount] = useState(from);
   const nodeRef = useRef(null);
-  const inView = useInView(nodeRef, { once: true, margin: "-100px" });
+  const inView = useInView(nodeRef, { once: true, margin: "-10px" });
 
   useEffect(() => {
     if (inView) {
@@ -51,12 +51,8 @@ export default function Statistics() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
           {stats.map((stat, index) => (
-            <motion.div 
+            <div 
               key={stat.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center group"
             >
               <div className="w-16 h-16 mx-auto mb-6 bg-brand-maroon/20 rounded-2xl flex items-center justify-center border border-brand-maroon/30 group-hover:bg-brand-maroon/40 transition-colors duration-300 transform group-hover:-translate-y-2">
@@ -69,7 +65,7 @@ export default function Statistics() {
               <p className="text-xs font-button uppercase tracking-widest text-brand-cream-muted opacity-70">
                 {stat.label}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
