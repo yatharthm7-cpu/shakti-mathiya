@@ -3,7 +3,6 @@ import Lenis from 'lenis';
 import { motion, useScroll, useSpring, AnimatePresence } from 'motion/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Header from './components/Header';
 import Hero from './components/Hero';
 import Statistics from './components/Statistics';
 import ProductCatalog from './components/ProductCatalog';
@@ -187,7 +186,7 @@ export default function App() {
               }}
             />
 
-            {/* Trailing Particles (desktop only, active over hero section) */}
+             {/* Trailing Particles (desktop only, active over hero section) */}
             <div className="fixed inset-0 pointer-events-none z-[99] hidden md:block">
               <AnimatePresence>
                 {particles.map((p) => (
@@ -216,7 +215,6 @@ export default function App() {
               </AnimatePresence>
             </div>
 
-            <Header />
             <main className="flex-grow">
               <ScrollReveal><Hero /></ScrollReveal>
               <SectionSeparator variant="mandala" />
